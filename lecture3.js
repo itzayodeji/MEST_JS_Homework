@@ -8,7 +8,11 @@
  *      console.log(this);
  *  }
  *
+	ANSWER: this is a keyword in the function poiniting back to the calling function
  *  func(); // what is the output? Why?
+
+ ANSWER: The output is the Window global function because that is the context in which the 
+ function is being run
  *
  *  var obj = {
  *      func: func // what is the second func here?
@@ -41,8 +45,13 @@
  *  question, please make sure you do your research on this).
  *
  */
-
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ 
 /*
  * 4. what is localStorage and sessionStorge under window object? What is the
  *    difference
  */
+ The sessionStorage property allows you to access a session Storage object for the current origin. 
+ The localStorage property allows you to access a local Storage object for the current origin
+ The difference is while data stored in localStorage has no expiration set, data stored in sessionStorage gets cleared when the page session ends. 
+ A page session lasts for as long as the browser is open and survives over page reloads and restores.
