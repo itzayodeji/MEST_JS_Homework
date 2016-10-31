@@ -131,6 +131,12 @@ var addTwoNumber = function(num1,num2){
  *    and lars
  */
 
+ 	var callname = namer();
+ 	var first = callname.bind(person1)
+ 	first();
+
+ 	var second = callname.bind(person2)
+ 	second();
 /*
  * 12. you have following object:
  *     var number = {
@@ -145,6 +151,10 @@ var addTwoNumber = function(num1,num2){
  *  b. use bind on function expression to make this work.
  */
 
+Invoking count displays NaN.
+
+	var sum = count.bind(number);
+	sum();
 /*
  * 13. you have following objects:
  *     var person1 = {
@@ -158,11 +168,13 @@ var addTwoNumber = function(num1,num2){
  *     };
  *
  *     function hello(greeting) {
- *          console.log(greeting + ' ' + this.firstName + '' + lastName);
+ *          console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
  *    }
  *
  *  use call methods on function expression to make this work.
  */
+ 	hello.call("Hello", person1)
+ 	hello.call("Hello", person2)
 
 /*
  * 14. We have a following string:
@@ -170,3 +182,13 @@ var addTwoNumber = function(num1,num2){
  *
  *     please write a function to change the first letter of every word to upper case.
  */
+		words = str.split(" ")
+		newWords = []
+		words.forEach(function(word){
+			slicedWord = word.slice(1)
+			newWords.push(word[0].toUpperCase() + slicedWord);
+			return newWords
+		});
+
+		str2 = newWords.join(" ");
+		console.log(str2);
